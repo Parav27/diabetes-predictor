@@ -3,9 +3,15 @@ import pandas as pd
 import numpy as np
 import pickle
 from sklearn.linear_model import LogisticRegression
+import os
+import pickle
 
-# Load your trained model (we'll create this file soon)
-model = pickle.load(open("code/diabetes_model.pkl", "rb"))
+# Get absolute path to the .pkl file
+model_path = os.path.join(os.path.dirname(__file__), "code", "diabetes_model.pkl")
+
+# Load model
+model = pickle.load(open(model_path, "rb"))
+
 
 
 st.title("🩺 Diabetes Prediction App")
