@@ -6,12 +6,11 @@ from sklearn.linear_model import LogisticRegression
 import os
 import pickle
 
-# Get absolute path to the .pkl file
-model_path = os.path.join(os.path.dirname(__file__), "code", "diabetes_model.pkl")
+# Get absolute path to the .pkl file (in the same folder now)
+model_path = os.path.join(os.path.dirname(__file__), "diabetes_model.pkl")
 
 # Load model
 model = pickle.load(open(model_path, "rb"))
-
 
 
 st.title("🩺 Diabetes Prediction App")
